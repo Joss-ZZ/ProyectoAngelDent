@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RecuperarActivity"></activity>
+        <activity android:name=".MenuPrincipal"/>
+        <activity android:name=".RecuperarActivity" />
         <activity android:name=".Registro2Activity" />
         <activity android:name=".RegistroActivity" />
         <activity android:name=".LoginActivity" />
