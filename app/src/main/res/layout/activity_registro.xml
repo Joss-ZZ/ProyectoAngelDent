@@ -52,6 +52,7 @@
                     android:layout_marginLeft="15px"
                     android:layout_width="600px"
                     android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
                     android:hint="@string/txtCorreo" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -170,11 +171,13 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="600px"
                 android:layout_height="wrap_content">
+
                 <EditText
                     android:id="@+id/txtTelefono"
-                    android:layout_marginLeft="15px"
                     android:layout_width="600px"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15px"
+                    android:inputType="number"
                     android:hint="@string/txtTelefono" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>

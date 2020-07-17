@@ -67,32 +67,42 @@
             android:layout_margin="40px"
             android:gravity="center"
             android:orientation="horizontal">
-
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/usuario">
+            </ImageView>
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="400px"
+                android:layout_width="700px"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/txtCodigo"
-                    android:layout_width="600px"
+                    android:id="@+id/txtEmail"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15px"
-                    android:hint="@string/txtCodigo" />
+                    android:layout_marginLeft="0px"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/txtIngresaCorreo"/>
             </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
             <Button
-                android:id="@+id/btnValidar"
+                android:id="@+id/btnEnviar"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="33dp"
                 android:layout_margin="50px"
-                android:layout_weight="1"
+                android:layout_weight="6"
                 android:background="@drawable/mi_boton"
-                android:text="@string/btnValidar"
+                android:text="@string/btnEnviar"
                 android:textAllCaps="false"
                 android:textSize="15sp" />
-        </LinearLayout>
-
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="150dp"
@@ -102,7 +112,8 @@
             <Button
                 android:id="@+id/btnAtras"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
                 android:layout_margin="50px"
                 android:layout_weight="6"
                 android:background="@drawable/mi_boton2"

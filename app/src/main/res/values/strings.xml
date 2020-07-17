@@ -8,12 +8,12 @@
     <string name="txtApellido">Ingrese Apellidos</string>
     <string name="txtTelefono">Ingrese Telefono</string>
     <string name="txtDireccion">Ingrese Direccion</string>
-    <string name="txtCodigo">Ingrese Codigo</string>
+    <string name="txtIngresaCorreo">Ingrese su correo electrónico</string>
 
     <string name="btnSalir">Salir</string>
     <string name="btnIngresar">Ingresar</string>
     <string name="btnRegistrar">Registrarse</string>
-    <string name="btnValidar">Validar</string>
+    <string name="btnEnviar">Enviar</string>
 
 
     <string name="RecordarClave">Recordar Clave</string>
@@ -22,14 +22,16 @@
     <string name="lblRecuperala">Recupérala</string>
     <string name="lblRecuperala2">Recuperar</string>
     <string name="lblRegistro">Registrarse</string>
-    <string name="lblMensajeCorreo">Mensaje</string>
+    <string name="lblMensajeCorreo">Se le enviará sus datos de acceso al correo registrado.</string>
 
 
-    <string name="btnContinuar">Continuar</string>
+    <string name="btnContinuar">Registrarse</string>
     <string name="btnAtras">Atras</string>
 
     <string name="lblOlvide">¿No tienes una cuenta?</string>
     <string name="lblOlvideContraseña">¿Olvidastes tu contraseña?</string>
 
+    <string name="txtCodigo">Ingrese código</string>
+    <string name="btnValidar">Validar</string>
 
 </resources>
