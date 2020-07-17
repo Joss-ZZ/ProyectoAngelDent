@@ -14,6 +14,10 @@
     <string name="btnIngresar">Ingresar</string>
     <string name="btnRegistrar">Registrarse</string>
     <string name="btnValidar">Validar</string>
+    <string name="lblHoraCita">Reserva Citas</string>
+    <string name="txtDia">Dia</string>
+    <string name="txtTurno">Turno</string>
+    <string name="btnVolver">Volver</string>
 
 
     <string name="RecordarClave">Recordar Clave</string>
@@ -26,7 +30,9 @@
 
 
     <string name="btnContinuar">Continuar</string>
+    <string name="btnContinuar1">Continuar</string>
     <string name="btnAtras">Atras</string>
+    <string name="txtSpinner">Turnos</string>
 
     <string name="lblOlvide">¿No tienes una cuenta?</string>
     <string name="lblOlvideContraseña">¿Olvidastes tu contraseña?</string>
