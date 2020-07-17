@@ -29,14 +29,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FF"
+                android:background="#FFFFFF"
                 tools:srcCompat="@drawable/reservar" />
             <ImageButton
                 android:id="@+id/btnAnularCita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FF"
+                android:background="#FFFFFF"
                 tools:srcCompat="@drawable/anular" />
         </LinearLayout>
         <LinearLayout
@@ -49,14 +49,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FF"
+                android:background="#FFFFFF"
                 tools:srcCompat="@drawable/nosotros" />
             <ImageButton
                 android:id="@+id/Ubicacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FF"
+                android:background="#FFFFFF"
                 tools:srcCompat="@drawable/ubicacion" />
         </LinearLayout>
         <TextView
