@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registro2Activity">
+    tools:context=".ValidacionActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="20dp">
 
         <ImageView
             android:id="@+id/ivLogo"
@@ -22,12 +24,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:gravity="center_horizontal"
             android:text="@string/lblPretitulo"
             android:textColor="#83992F"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:layout_margin="20dp"
             tools:layout_editor_absoluteX="-14dp"
             tools:layout_editor_absoluteY="173dp" />
 
@@ -37,7 +39,7 @@
             android:layout_margin="5dp"
             android:layout_marginTop="60dp"
             android:gravity="center_horizontal"
-            android:text="@string/lblRegistrarse"
+            android:text="@string/lblValida"
             android:textColor="#071907"
             android:textSize="32sp"
             android:textStyle="bold"
@@ -46,36 +48,38 @@
 
 
         <TextView
-            android:id="@+id/lblMensajeCorro"
+            android:id="@+id/lblMensajeValida"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_marginTop="60dp"
             android:gravity="center_horizontal"
-            android:text="@string/lblMensajeCorreo"
+            android:text="@string/lblMensajeValida"
             android:textColor="#071907"
             android:textSize="15sp"
             tools:layout_editor_absoluteX="-14dp"
             tools:layout_editor_absoluteY="173dp" />
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_margin="40px">
+            android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="400px"
                 android:layout_height="wrap_content">
+
                 <EditText
                     android:id="@+id/txtCodigo"
-                    android:layout_marginLeft="15px"
-                    android:layout_width="600px"
+                    android:layout_width="400px"
                     android:layout_height="wrap_content"
-                    android:hint="@string/txtCodigo" />
+                    android:layout_marginLeft="15px"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:hint="@string/txtCodigo"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -91,41 +95,16 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-
-
-
-
-
-        <LinearLayout
+        <Button
+            android:id="@+id/btnAtras"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-            <Button
-                android:id="@+id/btnRegistrar"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="50px"
-                android:text="@string/btnRegistrar"
-                android:textSize="15sp"
-                android:textAllCaps="false"
-                android:background="@drawable/mi_boton"/>
-            <Button
-                android:id="@+id/btnSalir"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="50px"
-                android:text="@string/btnSalir"
-                android:textAllCaps="false"
-                android:background="@drawable/mi_boton2"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-
-
+            android:layout_margin="120dp"
+            android:background="@drawable/mi_boton2"
+            android:text="@string/btnAtras"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

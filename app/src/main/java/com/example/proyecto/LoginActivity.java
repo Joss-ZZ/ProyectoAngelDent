@@ -32,6 +32,7 @@ import javax.mail.internet.MimeMessage;
 import cz.msebera.android.httpclient.Header;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+    String mensajeActivity;
     String correo, contraseña, mensaje, titulo;
     Button jbtnSalir,jbtnIngresar;
     TextView  jlblRegistrarse,jlblRecuperala;
@@ -139,6 +140,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 mensaje = "Hola "+us.getNombres()+", "+us.getApellidos()+", este es su código de verificación: "+codigo;
                                 titulo = "AngelDent - Valida tu cuenta!";
                                 EnviarEmail(us.getCorreo(),titulo,mensaje);
+                                mensajeActivity = "Hola "+us.getNombres()+", su cuenta se encuentra inhabilitada.\n";
+                                mensajeActivity += "Se le ha enviando un token a su correo: "+us.getCorreo();
+                                Intent iValidacion = new Intent(getApplicationContext(), ValidacionActivity.class);
+                                iValidacion.putExtra("mensajeActivity", mensajeActivity);
+                                iValidacion.putExtra("codigo", codigo);
+                                iValidacion.putExtra("id_usuario", us.getId());
+                                startActivity(iValidacion);
                             }
                         }
                     } catch (JSONException e) {
