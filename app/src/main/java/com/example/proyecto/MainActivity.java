@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
-//dsfsfsfsfscscs
 
 public class MainActivity extends AppCompatActivity {
     ProgressBar jpbCarga;
