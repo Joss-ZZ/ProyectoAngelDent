@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MenuPrincipal" />
         <activity android:name=".RecuperarActivity" />
-        <activity android:name=".Registro2Activity" />
+        <activity android:name=".ValidacionActivity" />
         <activity android:name=".RegistroActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">

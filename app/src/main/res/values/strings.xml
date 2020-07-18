@@ -19,12 +19,13 @@
 
     <string name="RecordarClave">Recordar Clave</string>
     <string name="CopyRight">Derechos Reservados - 2020</string>
-    <string name="lblRegistrarse">Regístrate!</string>
+    <string name="lblValida">Valida tu cuenta!</string>
     <string name="lblRecuperala">Recupérala</string>
     <string name="lblRecuperala2">Recuperar</string>
     <string name="lblRegistro">Registrarse</string>
-    <string name="lblMensajeCorreo">Se le enviará sus datos de acceso al correo registrado.</string>
-
+    <string name="lblMensajeRecuperala">Se le enviará sus datos de acceso al correo registrado.</string>
+    <string name="lblMensajeValida"></string>
+    <string name="lblRegistrate">Regístrate</string>
 
     <string name="btnContinuar">Registrarse</string>
     <string name="btnContinuar1">Continuar</string>

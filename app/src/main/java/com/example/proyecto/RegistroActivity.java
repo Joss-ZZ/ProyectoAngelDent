@@ -100,7 +100,6 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 @Override
                 public void onFailure(int statusCode, Header[] headers, Throwable throwable, String rawJsonData, Object errorResponse) {
                     Toast.makeText(getApplicationContext(), "Error al registrar.", Toast.LENGTH_SHORT).show();
-
                 }
 
                 @Override

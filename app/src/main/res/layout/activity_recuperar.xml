@@ -54,7 +54,7 @@
             android:layout_margin="5dp"
             android:layout_marginTop="60dp"
             android:gravity="center_horizontal"
-            android:text="@string/lblMensajeCorreo"
+            android:text="@string/lblMensajeRecuperala"
             android:textColor="#071907"
             android:textSize="15sp"
             tools:layout_editor_absoluteX="-14dp"
