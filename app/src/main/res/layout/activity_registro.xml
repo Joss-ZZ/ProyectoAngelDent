@@ -178,6 +178,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15px"
                     android:inputType="number"
+                    android:maxLength="9"
                     android:hint="@string/txtTelefono" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>

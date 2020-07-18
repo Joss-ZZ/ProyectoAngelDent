@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MenuPrincipal">
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
         <ImageView
             android:id="@+id/ivLogo"
             android:layout_width="282dp"
-            android:layout_height="137dp"
+            android:layout_height=  "137dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/im1_e" />
 
@@ -30,14 +31,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFFF"
-                tools:srcCompat="@drawable/reservar" />
+                android:src="@drawable/reservar" />
             <ImageButton
                 android:id="@+id/btnAnularCita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFFF"
-                tools:srcCompat="@drawable/anular" />
+                android:src="@drawable/anular" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,14 +51,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFFF"
-                tools:srcCompat="@drawable/nosotros" />
+                android:src="@drawable/contac1" />
             <ImageButton
                 android:id="@+id/Ubicacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFFF"
-                tools:srcCompat="@drawable/ubicacion" />
+                android:src="@drawable/map" />
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"
