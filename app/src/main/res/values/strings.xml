@@ -19,6 +19,11 @@
 
     <string name="RecordarClave">Recordar Clave</string>
     <string name="CopyRight">Derechos Reservados - 2020</string>
+    <string name="CopyRight2">
+        Versión Beta 1.0.0\n\n
+        Angel Dent Móvil es una aplicacion desarrollada por estudiantes de la upn
+        \n\nDerechos Reservados - 2020</string>
+
     <string name="lblValida">Valida tu cuenta!</string>
     <string name="lblRecuperala">Recupérala</string>
     <string name="lblRecuperala2">Recuperar</string>
@@ -26,6 +31,10 @@
     <string name="lblMensajeRecuperala">Se le enviará sus datos de acceso al correo registrado.</string>
     <string name="lblMensajeValida"></string>
     <string name="lblRegistrate">Regístrate</string>
+    <string name="lbltexto1">Acerca de Nosotros:</string>
+    <string name="lbltexto2">Más de 20 años y miles de sonrisas alrededor del Perú nos respaldan como la primera y mejor Clínica Dental del pais. ¡Compruébalo tu mismo!</string>
+    <string name="lbltexto3">http://www.angeldent.pe/</string>
+    <string name="lbltexto4">angeldent@gmail.com</string>
 
     <string name="btnContinuar">Registrarse</string>
     <string name="btnContinuar1">Continuar</string>
