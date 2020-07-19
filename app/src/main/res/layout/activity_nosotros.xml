@@ -103,13 +103,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/instagram_32"/>
+                android:src="@drawable/instagram_32" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
-                android:src="@drawable/youtube_32"/>
+                android:src="@drawable/youtube_32" />
 
         </LinearLayout>
 
@@ -118,7 +118,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            style="@style/TextAppearance.AppCompat.Medium">
+            style="@style/TextAppearance.AppCompat.Medium" >
 
             <Button
                 android:id="@+id/btnAtras"
@@ -130,7 +130,7 @@
                 android:background="@drawable/mi_boton2"
                 android:text="@string/btnAtras"
                 android:textAllCaps="false"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -144,7 +144,7 @@
             android:gravity="bottom|center_horizontal"
             android:layout_gravity="bottom"
             android:textSize="13sp"
-            style="@style/TextAppearance.AppCompat.Medium"     />
+            style="@style/TextAppearance.AppCompat.Medium"  />
 
     </LinearLayout>
 

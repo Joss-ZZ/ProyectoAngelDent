@@ -12,24 +12,23 @@ public class NosotrosActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nosotros);
-        jbtnAtras = findViewById(R.id.btnAtras);
+        super.onCreate(savedInstanceState) ;
+        setContentView(R.layout.activity_nosotros) ;
+        jbtnAtras = findViewById(R.id.btnAtras) ;
 
-        jbtnAtras.setOnClickListener(this);
-    }
+        jbtnAtras.setOnClickListener(this) ; }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId() ){
             case R.id.btnAtras:
-                Atras();
-                break;
+                Atras() ;
+                break ;
         }
     }
 
     private void Atras() {
         Intent iPrincipal = new Intent(this, MenuPrincipal.class);
-        startActivity(iPrincipal);
+        startActivity(iPrincipal) ;
     }
 }
