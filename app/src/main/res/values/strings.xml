@@ -36,5 +36,6 @@
 
     <string name="txtCodigo">Ingrese código</string>
     <string name="btnValidar">Validar</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

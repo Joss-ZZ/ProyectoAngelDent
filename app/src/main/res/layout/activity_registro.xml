@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/usuario">
+                android:src="@drawable/ic_baseline_email_24">
             </ImageView>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="600px"
@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/usuario">
+                android:src="@drawable/ic_baseline_account_circle_24">
             </ImageView>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="600px"
@@ -166,7 +166,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/usuario">
+                android:src="@drawable/ic_baseline_phone_iphone_24">
             </ImageView>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="600px"
@@ -193,7 +193,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/usuario">
+                android:src="@drawable/ic_baseline_location_on_24">
             </ImageView>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="600px"
