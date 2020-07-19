@@ -3,6 +3,7 @@ package com.example.proyecto;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
@@ -37,7 +38,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button jbtnSalir,jbtnIngresar;
     TextView  jlblRegistrarse,jlblRecuperala;
     EditText jtxtUsuario, jtxtClave;
-    Session session;
+
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         jbtnSalir=findViewById(R.id.btnSalir);
         jtxtUsuario=findViewById(R.id.txtUsuario);
         jtxtClave=findViewById(R.id.txtClave);
+
+        preferences = getSharedPreferences("Usuario", MODE_PRIVATE);
+        editor = preferences.edit();
+
+        if(preferences.contains("nombres")){
+            Intent iMenuPrincipal = new Intent(getApplicationContext(), MenuPrincipal.class);
+            startActivity(iMenuPrincipal);
+            finish();
+        }
 
         jtxtUsuario.setOnClickListener(this);
         jtxtClave.setOnClickListener(this);
@@ -126,6 +138,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 Toast.makeText(getApplicationContext(), "Usuario/Clave incorrecta", Toast.LENGTH_SHORT).show();
                             }else if(estado.equals("habilitado")){
                                 Toast.makeText(getApplicationContext(), "Bienvenido "+ jsonArray.getJSONObject(0).getString("nombres"), Toast.LENGTH_SHORT).show();
+                                Usuario us = new Usuario(Integer.parseInt(jsonArray.getJSONObject(0).getString("id_usuario")),
+                                        jsonArray.getJSONObject(0).getString("usuario"),
+                                        jsonArray.getJSONObject(0).getString("contrasena"),
+                                        jsonArray.getJSONObject(0).getString("nombres"),
+                                        jsonArray.getJSONObject(0).getString("apellidos"),
+                                        jsonArray.getJSONObject(0).getString("telefono"),
+                                        jsonArray.getJSONObject(0).getString("correo"),
+                                        jsonArray.getJSONObject(0).getString("direccion"));
+                                //Creamos el archivo para almacenar los datos esenciales de la sesión
+                                editor.putInt("id_usuario", us.getId());
+                                editor.putString("nombres", us.getNombres());
+                                editor.putString("apellidos", us.getApellidos());
+                                editor.commit();
                                 Intent iMenuPrincipal = new Intent(getApplicationContext(), MenuPrincipal.class);
                                 startActivity(iMenuPrincipal);
                                 finish();

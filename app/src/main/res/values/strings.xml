@@ -38,4 +38,6 @@
     <string name="btnValidar">Validar</string>
     <string name="title_activity_maps">Map</string>
 
+    <string name="btnCerrarSesion">CERRAR SESIÓN</string>
+
 </resources>

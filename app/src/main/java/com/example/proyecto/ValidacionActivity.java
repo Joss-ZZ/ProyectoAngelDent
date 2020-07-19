@@ -3,6 +3,7 @@ package com.example.proyecto;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,9 @@ public class ValidacionActivity extends AppCompatActivity implements View.OnClic
     TextView jlblMensajeValida;
     EditText jtxtCodigo;
     Button jbtnValidar, jbtnAtras;
+
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +91,13 @@ public class ValidacionActivity extends AppCompatActivity implements View.OnClic
                                                 jsonArray.getJSONObject(0).getString("telefono"),
                                                 jsonArray.getJSONObject(0).getString("correo"),
                                                 jsonArray.getJSONObject(0).getString("direccion"));
-
+                                    //Creamos el archivo para almacenar los datos esenciales de la sesión
+                                    preferences = getSharedPreferences("Usuario", MODE_PRIVATE);
+                                    editor = preferences.edit();
+                                    editor.putInt("id_usuario", us.getId());
+                                    editor.putString("nombres", us.getNombres());
+                                    editor.putString("apellidos", us.getApellidos());
+                                    editor.commit();
                                     Intent iMenuPrincipal = new Intent(getApplicationContext(), MenuPrincipal.class);
                                     startActivity(iMenuPrincipal);
                                     finish();
