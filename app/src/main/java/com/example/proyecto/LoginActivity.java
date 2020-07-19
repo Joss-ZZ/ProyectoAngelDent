@@ -33,7 +33,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     String mensajeActivity;
-    String correo, contraseña, mensaje, titulo;
+    String mensaje, titulo;
     Button jbtnSalir,jbtnIngresar;
     TextView  jlblRegistrarse,jlblRecuperala;
     EditText jtxtUsuario, jtxtClave;
@@ -126,6 +126,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 Toast.makeText(getApplicationContext(), "Usuario/Clave incorrecta", Toast.LENGTH_SHORT).show();
                             }else if(estado.equals("habilitado")){
                                 Toast.makeText(getApplicationContext(), "Bienvenido "+ jsonArray.getJSONObject(0).getString("nombres"), Toast.LENGTH_SHORT).show();
+                                Intent iMenuPrincipal = new Intent(getApplicationContext(), MenuPrincipal.class);
+                                startActivity(iMenuPrincipal);
+                                finish();
                             }else if(estado.equals("inhabilitado")){
                                 Toast.makeText(getApplicationContext(), "Hola "+ jsonArray.getJSONObject(0).getString("nombres") + ", tu cuenta está inhabilitada", Toast.LENGTH_SHORT).show();
                                 String codigo = GenerarCodigo();

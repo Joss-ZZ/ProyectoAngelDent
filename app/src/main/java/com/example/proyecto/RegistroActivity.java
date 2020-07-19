@@ -15,15 +15,20 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.BaseJsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 import java.util.regex.Pattern;
 
 import cz.msebera.android.httpclient.Header;
 
 public class RegistroActivity extends AppCompatActivity implements View.OnClickListener{
-
+    String mensajeActivity;
+    String mensaje, titulo;
     EditText jtxtCorreo, jtxtUsuario, jtxtClave, jtxtNombre, jtxtApellido, jtxtTelefono, jtxtDireccion;
 
     Button jbtnContinuar , jbtnAtras;
@@ -90,16 +95,43 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, String rawJsonResponse, Object response) {
                     if(statusCode == 200){
-                        int iRetVal = (rawJsonResponse.length() == 0 ? 0 : Integer.parseInt(rawJsonResponse));
-                        if(iRetVal == 1){
-                            Toast.makeText(getApplicationContext(), "Registro Agregado con éxito!", Toast.LENGTH_SHORT).show();
+                        try {
+                            JSONArray jsonArray = new JSONArray(rawJsonResponse);
+                            if(jsonArray.length() > 0) {
+                                String sCorreo = jsonArray.getJSONObject(0).getString("correo");
+                                if (sCorreo.equals("-1")) {
+                                    jtxtCorreo.setError("El correo ya existe en nuestra base de datos!");
+                                } else {
+                                    Usuario us = new Usuario(Integer.parseInt(jsonArray.getJSONObject(0).getString("id_usuario")),
+                                            jsonArray.getJSONObject(0).getString("usuario"),
+                                            jsonArray.getJSONObject(0).getString("contrasena"),
+                                            jsonArray.getJSONObject(0).getString("nombres"),
+                                            jsonArray.getJSONObject(0).getString("apellidos"),
+                                            jsonArray.getJSONObject(0).getString("telefono"),
+                                            jsonArray.getJSONObject(0).getString("correo"),
+                                            jsonArray.getJSONObject(0).getString("direccion"));
+                                    String codigo = GenerarCodigo();
+                                    mensaje = "Hola "+us.getNombres()+", "+us.getApellidos()+", este es su código de verificación: "+codigo;
+                                    titulo = "AngelDent - Valida tu cuenta!";
+                                    EnviarEmail(us.getCorreo(),titulo,mensaje);
+                                    mensajeActivity = "Hola "+us.getNombres()+", para poder continuar valide su cuenta.\n";
+                                    mensajeActivity += "Se le ha enviando un token a su correo: "+us.getCorreo();
+                                    Intent iValidacion = new Intent(getApplicationContext(), ValidacionActivity.class);
+                                    iValidacion.putExtra("mensajeActivity", mensajeActivity);
+                                    iValidacion.putExtra("codigo", codigo);
+                                    iValidacion.putExtra("id_usuario", us.getId());
+                                    startActivity(iValidacion);
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
                     }
                 }
 
                 @Override
                 public void onFailure(int statusCode, Header[] headers, Throwable throwable, String rawJsonData, Object errorResponse) {
-                    Toast.makeText(getApplicationContext(), "Error al registrar.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Vaya! problemas al registrar...", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
@@ -108,6 +140,17 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 }
             });
         }
+    }
+
+    private void EnviarEmail(String destino, String titulo, String mensaje) {
+        JavaMailAPI javaMailAPI = new JavaMailAPI(this, destino, titulo, mensaje);
+        javaMailAPI.execute();
+    }
+
+    public String GenerarCodigo(){
+        Random rnd = new Random();
+        int number = rnd.nextInt(999999);
+        return String.format("%06d", number);
     }
 
     private boolean validarEmail(String email) {
