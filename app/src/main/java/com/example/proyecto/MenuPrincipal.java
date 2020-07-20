@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class MenuPrincipal extends AppCompatActivity implements View.OnClickListener{
-    ImageButton jibubicacion, jibnosotros;
+    ImageButton jibubicacion, jibnosotros, jibReservarCita;
     Button jbtnCerrarSesion;
 
     private SharedPreferences preferences2;
@@ -22,16 +22,21 @@ public class MenuPrincipal extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_menu_principal);
         jibubicacion = findViewById(R.id.Ubicacion);
         jibnosotros = findViewById(R.id.Nosotros);
+        jibReservarCita = findViewById(R.id.btnReservarCita);
         jbtnCerrarSesion = findViewById(R.id.btnCerrarSesion);
 
         jibnosotros.setOnClickListener(this);
         jibubicacion.setOnClickListener(this);
+        jibReservarCita.setOnClickListener(this);
         jbtnCerrarSesion.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            case R.id.btnReservarCita :
+                reservacita();
+                break;
             case R.id.Nosotros :
                 nosotros();
                 break;
@@ -43,6 +48,11 @@ public class MenuPrincipal extends AppCompatActivity implements View.OnClickList
                 break;
         }
 
+    }
+
+    private void reservacita() {
+        Intent iReservaCita = new Intent(getApplicationContext(), ReservaDeCita.class);
+        startActivity(iReservaCita);
     }
 
     private void CerrarSesion() {

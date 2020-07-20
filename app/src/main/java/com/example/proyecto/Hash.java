@@ -5,7 +5,6 @@ import java.security.NoSuchAlgorithmException;
 
 public class Hash {
     private String sHash;
-    //fdfdfdfdfdfdfdfdfdfdfdfd
 
     public Hash() {
     }

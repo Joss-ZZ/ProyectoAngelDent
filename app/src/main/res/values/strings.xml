@@ -48,5 +48,17 @@
     <string name="title_activity_maps">Map</string>
 
     <string name="btnCerrarSesion">CERRAR SESIÓN</string>
+    <string name="txtfechaReserva"></string>
+    <string name="lblTurno">Seleccione el turno:</string>
+    <string-array name="spTurno">
+        <item>Seleccione una opción</item>
+        <item>Mañana</item>
+        <item>Tarde</item>
+    </string-array>
+    <string name="btnSeguir">CONTINUAR</string>
+    <string name="lblDentistasDisponibles">Dentistas Disponibles</string>
 
+    <string name="lblItemNombres">Nombre:</string>
+    <string name="lblItemApellidos">Apellidos:</string>
+    <string name="lblItemCorreo">Email:</string>
 </resources>

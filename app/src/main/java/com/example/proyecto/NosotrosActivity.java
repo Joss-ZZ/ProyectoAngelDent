@@ -30,5 +30,6 @@ public class NosotrosActivity extends AppCompatActivity implements View.OnClickL
     private void Atras() {
         Intent iPrincipal = new Intent(this, MenuPrincipal.class);
         startActivity(iPrincipal) ;
+        finish();
     }
 }
