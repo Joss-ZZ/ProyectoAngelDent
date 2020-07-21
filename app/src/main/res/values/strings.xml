@@ -62,4 +62,5 @@
     <string name="lblItemApellidos">Apellidos:</string>
     <string name="lblItemCorreo">Email:</string>
     <string name="lblSeleccionarHora">Seleccione una opción:</string>
+    <string name="lblItemDisponibilidad">Ver Disponibilidad</string>
 </resources>
