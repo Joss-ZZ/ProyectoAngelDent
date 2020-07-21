@@ -23,6 +23,8 @@ public class MostrarDesntistasDisponibles extends AppCompatActivity {
     ListView jlvMostrarDentistasDisponibles;
     ArrayList<HorarioDentista> lista;
     MostrarDentistasDisponiblesAdapter adapter = null;
+    private String turno;
+    private String fecha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +36,9 @@ public class MostrarDesntistasDisponibles extends AppCompatActivity {
         adapter = new MostrarDentistasDisponiblesAdapter(this, R.layout.item_lv_dentistas_disponibles, lista);
         jlvMostrarDentistasDisponibles.setAdapter(adapter);
 
-        String turno = this.getIntent().getStringExtra("turno");
+        turno = this.getIntent().getStringExtra("turno");
         int dia_id = this.getIntent().getIntExtra("dia_id",0);
+        fecha = this.getIntent().getStringExtra("fecha");
 
         MostrarDentistas(dia_id,turno);
 
@@ -43,6 +46,8 @@ public class MostrarDesntistasDisponibles extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MostrarDesntistasDisponibles.this, RegistrarCita.class);
+                intent.putExtra("turno",turno);
+                intent.putExtra("fecha",fecha);
                 intent.putExtra("datosDentista", lista.get(i));
                 startActivity(intent);
             }

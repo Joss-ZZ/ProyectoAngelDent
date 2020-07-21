@@ -65,4 +65,12 @@
     <string name="lblItemApellidos">Apellidos:</string>
     <string name="lblItemCorreo">Email:</string>
     <string name="lblSeleccionarHora">Seleccione una opción:</string>
+    <string name="lblItemDisponibilidad">Ver Disponibilidad</string>
+
+    <string name="lblRegistrarCita">Registrar Cita</string>
+    <string name="lblFecha">Fecha:</string>
+    <string name="lblDoctor">Doctor:</string>
+    <string name="lblHora">Hora:</string>
+    <string name="lblEstado">Estado:</string>
+    <string name="btnRegistrarCita">REGISTRAR CITA</string>
 </resources>

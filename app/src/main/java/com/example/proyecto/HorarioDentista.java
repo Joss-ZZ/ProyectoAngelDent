@@ -8,6 +8,9 @@ public class HorarioDentista implements Serializable {
     private String nombres;
     private String apellidos;
     private String correo;
+    private String dia;
+    private String hora_inicio;
+    private String hora_fin;
     private int id_dia;
     private int id_hora;
 
@@ -20,6 +23,19 @@ public class HorarioDentista implements Serializable {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
+        this.id_dia = id_dia;
+        this.id_hora = id_hora;
+    }
+
+    public HorarioDentista(int id_dentista, String foto, String nombres, String apellidos, String correo, String dia, String hora_inicio, String hora_fin, int id_dia, int id_hora) {
+        this.id_dentista = id_dentista;
+        this.foto = foto;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.dia = dia;
+        this.hora_inicio = hora_inicio;
+        this.hora_fin = hora_fin;
         this.id_dia = id_dia;
         this.id_hora = id_hora;
     }
@@ -78,5 +94,29 @@ public class HorarioDentista implements Serializable {
 
     public void setId_hora(int id_hora) {
         this.id_hora = id_hora;
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+
+    public String getHora_inicio() {
+        return hora_inicio;
+    }
+
+    public void setHora_inicio(String hora_inicio) {
+        this.hora_inicio = hora_inicio;
+    }
+
+    public String getHora_fin() {
+        return hora_fin;
+    }
+
+    public void setHora_fin(String hora_fin) {
+        this.hora_fin = hora_fin;
     }
 }
