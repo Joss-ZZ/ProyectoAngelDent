@@ -36,6 +36,9 @@
     <string name="lbltexto3"> http://www.angeldent.pe/</string>
     <string name="lbltexto4"> angeldent@gmail.com</string>
 
+    <string name="lblReserva">Reserva de Citas </string>
+
+
     <string name="btnContinuar">Registrarse</string>
     <string name="btnContinuar1">Continuar</string>
     <string name="btnAtras">Atras</string>
