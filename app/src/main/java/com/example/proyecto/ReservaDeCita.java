@@ -112,6 +112,7 @@ public class ReservaDeCita extends AppCompatActivity implements View.OnClickList
                     c.set(anioAux, mesAux, diaAux);
                     int diaSemana = c.get(Calendar.DAY_OF_WEEK);
                     Intent iDentistasDisponibles = new Intent(getApplicationContext(), MostrarDesntistasDisponibles.class);
+                    iDentistasDisponibles.putExtra("fecha", fechaSeleccionada);
                     iDentistasDisponibles.putExtra("dia_id", diaSemana);
                     iDentistasDisponibles.putExtra("turno", turno);
                     startActivity(iDentistasDisponibles);
@@ -127,6 +128,7 @@ public class ReservaDeCita extends AppCompatActivity implements View.OnClickList
                 c.set(anioAux, mesAux, diaAux);
                 int diaSemana = c.get(Calendar.DAY_OF_WEEK);
                 Intent iDentistasDisponibles = new Intent(getApplicationContext(), MostrarDesntistasDisponibles.class);
+                iDentistasDisponibles.putExtra("fecha", fechaSeleccionada);
                 iDentistasDisponibles.putExtra("dia_id", diaSemana);
                 iDentistasDisponibles.putExtra("turno", turno);
                 startActivity(iDentistasDisponibles);

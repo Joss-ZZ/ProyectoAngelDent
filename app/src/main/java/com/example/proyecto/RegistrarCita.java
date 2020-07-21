@@ -2,10 +2,13 @@ package com.example.proyecto;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,6 +26,8 @@ import cz.msebera.android.httpclient.Header;
 
 public class RegistrarCita extends AppCompatActivity {
     private HorarioDentista dentista;
+    private String turno;
+    private String fecha;
     ListView jlvMostrarHorasDisponibles;
     ArrayList<HorarioDentista> lista;
     MostrarHorasDentistaAdapter adapter = null;
@@ -36,7 +41,8 @@ public class RegistrarCita extends AppCompatActivity {
         setContentView(R.layout.activity_registrar_cita);
 
         dentista = (HorarioDentista) getIntent().getSerializableExtra("datosDentista");
-        String turno = this.getIntent().getStringExtra("turno");
+        turno = this.getIntent().getStringExtra("turno");
+        fecha = this.getIntent().getStringExtra("fecha");
 
         jlvMostrarHorasDisponibles = findViewById(R.id.lvMostrarHorasDisponibles);
         jlblItemDatoPersonal = findViewById(R.id.lblItemDatoPersonal);
@@ -55,6 +61,17 @@ public class RegistrarCita extends AppCompatActivity {
         jlvMostrarHorasDisponibles.setAdapter(adapter);
 
         MostrarHoras(dentista.getId_dentista(),dentista.getId_dia(), turno);
+
+        jlvMostrarHorasDisponibles.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(RegistrarCita.this, RegistrarCita2.class);
+                intent.putExtra("turno",turno);
+                intent.putExtra("fecha",fecha);
+                intent.putExtra("datosDentista", lista.get(i));
+                startActivity(intent);
+            }
+        });
     }
 
     private void MostrarHoras(int id_dentista, int id_dia, String turno) {
