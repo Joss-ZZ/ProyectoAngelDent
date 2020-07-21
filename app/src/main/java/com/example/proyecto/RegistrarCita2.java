@@ -3,8 +3,10 @@ package com.example.proyecto;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,12 +20,15 @@ import org.json.JSONException;
 
 import cz.msebera.android.httpclient.Header;
 
-public class RegistrarCita2 extends AppCompatActivity {
+public class RegistrarCita2 extends AppCompatActivity implements View.OnClickListener{
     private HorarioDentista dentista;
     private String turno, fecha;
 
     TextView jlblDoctor, jlblFechaSeleccionada, jlblHora, jlblEstado;
     Button jbtnRegistrarCita;
+
+    private SharedPreferences preferences3;
+    private SharedPreferences.Editor editor3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,9 @@ public class RegistrarCita2 extends AppCompatActivity {
         jlblEstado = findViewById(R.id.lblEstado);
         jbtnRegistrarCita = findViewById(R.id.btnRegistrarCita);
 
+        preferences3 = getSharedPreferences("Usuario", MODE_PRIVATE);
+        editor3 = preferences3.edit();
+
         dentista = (HorarioDentista) getIntent().getSerializableExtra("datosDentista");
         turno = this.getIntent().getStringExtra("turno");
         fecha = this.getIntent().getStringExtra("fecha");
@@ -44,6 +52,8 @@ public class RegistrarCita2 extends AppCompatActivity {
         jlblDoctor.setText(dentista.getNombres()+", "+dentista.getApellidos());
         jlblFechaSeleccionada.setText(fecha);
         jlblHora.setText(dentista.getHora_inicio()+" a "+dentista.getHora_fin());
+
+        jbtnRegistrarCita.setOnClickListener(this);
     }
 
     private void MostrarEstado(int id_dentista, int id_dia, int id_hora, String fecha) {
@@ -87,5 +97,52 @@ public class RegistrarCita2 extends AppCompatActivity {
                 return null;
             }
         });
+    }
+
+    @Override
+    public void onClick(View view) {
+            AsyncHttpClient ahcRegistrar = new AsyncHttpClient();
+            String sUrl = "http://camilodc.site/RegistrarCita.php";
+            //llenar parametros
+            RequestParams params = new RequestParams();
+            params.add("id_paciente", ""+preferences3.getInt("id_usuario",0));
+            params.add("id_dentista", ""+dentista.getId_dentista());
+            params.add("id_dia", ""+dentista.getId_dia());
+            params.add("id_hora", ""+dentista.getId_hora());
+            params.add("fecha", fecha);
+
+            ahcRegistrar.post(sUrl, params, new BaseJsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, String rawJsonResponse, Object response) {
+                    if(statusCode == 200){
+                        try {
+                            JSONArray jsonArray = new JSONArray(rawJsonResponse);
+                            if(jsonArray.length() > 0) {
+                                String id_cita = jsonArray.getJSONObject(0).getString("id_cita");
+                                if (id_cita.equals("1")) {
+                                    Intent iMenuPrincipal = new Intent(getApplicationContext(), MenuPrincipal.class);
+                                    startActivity(iMenuPrincipal);
+                                    Toast.makeText(getApplicationContext(), "Cita registrada con éxito!", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Lo sentimos, esta cita ya está reservada...", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, String rawJsonData, Object errorResponse) {
+                    Toast.makeText(getApplicationContext(), "Vaya! hubo un problema al registrar...", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                protected Object parseResponse(String rawJsonData, boolean isFailure) throws Throwable {
+                    return null;
+                }
+            });
     }
 }
