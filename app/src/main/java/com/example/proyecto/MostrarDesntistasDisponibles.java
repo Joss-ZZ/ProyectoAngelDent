@@ -2,7 +2,10 @@ package com.example.proyecto;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -35,6 +38,15 @@ public class MostrarDesntistasDisponibles extends AppCompatActivity {
         int dia_id = this.getIntent().getIntExtra("dia_id",0);
 
         MostrarDentistas(dia_id,turno);
+
+        jlvMostrarDentistasDisponibles.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MostrarDesntistasDisponibles.this, RegistrarCita.class);
+                intent.putExtra("datosDentista", lista.get(i));
+                startActivity(intent);
+            }
+        });
     }
 
     private void MostrarDentistas(int dia_id, String turno) {

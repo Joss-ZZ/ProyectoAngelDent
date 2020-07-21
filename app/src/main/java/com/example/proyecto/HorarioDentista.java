@@ -1,6 +1,8 @@
 package com.example.proyecto;
 
-public class HorarioDentista {
+import java.io.Serializable;
+
+public class HorarioDentista implements Serializable {
     private int id_dentista;
     private String foto;
     private String nombres;
