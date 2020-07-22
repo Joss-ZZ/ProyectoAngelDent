@@ -6,8 +6,8 @@
     <string name="txtClave">Ingrese Clave</string>
     <string name="txtNombre">Ingrese Nombres</string>
     <string name="txtApellido">Ingrese Apellidos</string>
-    <string name="txtTelefono">Ingrese Telefono</string>
-    <string name="txtDireccion">Ingrese Direccion</string>
+    <string name="txtTelefono">Ingrese Teléfono</string>
+    <string name="txtDireccion">Ingrese Dirección</string>
     <string name="txtIngresaCorreo">Ingrese su correo electrónico</string>
 
     <string name="btnSalir">SALIR</string>
@@ -32,7 +32,7 @@
     <string name="lblMensajeValida"></string>
     <string name="lblRegistrate">Regístrate</string>
     <string name="lbltexto1">Acerca de Nosotros: </string>
-    <string name="lbltexto2"> Más de 20 años y miles de sonrisas alrededor del Perú nos respaldan como la primera y mejor Clínica Dental del pais. ¡Compruébalo tu mismo!</string>
+    <string name="lbltexto2"> Más de 20 años y miles de sonrisas alrededor del Perú nos respaldan como la primera y mejor Clínica Dental del país. ¡Compruébalo tu mismo!</string>
     <string name="lbltexto3"> http://www.angeldent.pe/</string>
     <string name="lbltexto4"> angeldent@gmail.com</string>
 
@@ -44,7 +44,7 @@
     <string name="btnAtras">ATRAS</string>
 
     <string name="lblOlvide">¿No tienes una cuenta?</string>
-    <string name="lblOlvideContraseña">¿Olvidastes tu contraseña?</string>
+    <string name="lblOlvideContraseña">¿Olvidaste tu contraseña?</string>
 
     <string name="txtCodigo">Ingrese código</string>
     <string name="btnValidar">VALIDAR</string>

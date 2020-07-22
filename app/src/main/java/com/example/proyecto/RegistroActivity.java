@@ -80,11 +80,12 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         }
         if(validarCorreo==true && validacion==true && LongitudTelf==true){
             AsyncHttpClient ahcRegistrar = new AsyncHttpClient();
+            Hash hash = new Hash();
             String sUrl = "http://camilodc.site/pacientes.php";
             //llenar parametros
             RequestParams params = new RequestParams();
             params.add("usuario", jtxtUsuario.getText().toString().trim());
-            params.add("contrasena", jtxtClave.getText().toString().trim());
+            params.add("contrasena", hash.StringToHash(jtxtClave.getText().toString().trim(), "SHA1"));
             params.add("nombre", jtxtNombre.getText().toString().trim());
             params.add("apellido", jtxtApellido.getText().toString().trim());
             params.add("telefono", jtxtTelefono.getText().toString().trim());

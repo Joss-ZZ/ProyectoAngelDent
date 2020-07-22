@@ -107,11 +107,12 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="120dp"
+            android:layout_margin="130dp"
             android:background="@drawable/mi_boton2"
             android:text="@string/btnAtras"
             android:textAllCaps="false"
-            android:textSize="18sp" />
+            android:textStyle="bold"
+            android:textSize="14sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

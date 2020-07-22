@@ -124,7 +124,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         RequestParams params = new RequestParams();
         params.add("usuario",usuario);
-        params.add("contrasena", password);
+        params.add("contrasena", hash.StringToHash(password, "SHA1"));
         params.add("accion", accion);
 
         cliente.post(sURL, params, new BaseJsonHttpResponseHandler() {
