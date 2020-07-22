@@ -69,8 +69,13 @@
 
     <string name="lblRegistrarCita">Registrar Cita</string>
     <string name="lblFecha">Fecha:</string>
-    <string name="lblDoctor">Doctor:</string>
+    <string name="lblDoctor">Dentista:</string>
     <string name="lblHora">Hora:</string>
     <string name="lblEstado">Estado:</string>
     <string name="btnRegistrarCita">REGISTRAR CITA</string>
+
+    <string name="lblDetalleCita">Cita Reservada</string>
+    <string name="lblPaciente">Paciente:</string>
+    <string name="lblIDCita">ID_CITA:</string>
+    <string name="btnAnularCita">ANULAR</string>
 </resources>
