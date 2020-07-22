@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/f_i1"
     tools:context=".LoginActivity">
-//#EAF4E8
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,6 +17,7 @@
             android:id="@+id/ivLogo"
             android:layout_width="282dp"
             android:layout_height="137dp"
+            android:layout_margin="20dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/im1_e" />
 
@@ -26,7 +27,7 @@
             android:gravity="center_horizontal"
             android:text="@string/lblPretitulo"
             android:textColor="#83992F"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:layout_margin="20dp"/>
         <LinearLayout
@@ -108,7 +109,7 @@
             <Button
                 android:id="@+id/btnIngresar"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
+                android:layout_width="700px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="50px"
@@ -119,14 +120,14 @@
             <Button
                 android:id="@+id/btnSalir"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
+                android:layout_width="700px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="50px"
                 android:text="@string/btnSalir"
                 android:textAllCaps="false"
                 android:background="@drawable/mi_boton2"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
         </LinearLayout>
 
     <LinearLayout

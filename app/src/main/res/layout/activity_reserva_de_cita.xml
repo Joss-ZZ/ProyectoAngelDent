@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/f_i1"
     tools:context=".ReservaDeCita">
 
     <LinearLayout
@@ -19,6 +20,7 @@
             android:orientation="horizontal"
             android:text="@string/lblReserva"
             android:textColor="#071907"
+            android:layout_margin="50dp"
             android:textStyle="bold"
             android:textSize="25dp" />
         <LinearLayout

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/f_i1"
     tools:context=".RecuperarActivity">
 
     <LinearLayout
@@ -18,6 +19,7 @@
             android:id="@+id/ivLogo"
             android:layout_width="282dp"
             android:layout_height="137dp"
+            android:layout_margin="20dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/im1_e" />
 
@@ -28,7 +30,7 @@
             android:gravity="center_horizontal"
             android:text="@string/lblPretitulo"
             android:textColor="#83992F"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="-14dp"
             tools:layout_editor_absoluteY="173dp" />
@@ -98,6 +100,7 @@
                 android:layout_height="33dp"
                 android:layout_margin="50px"
                 android:layout_weight="6"
+
                 android:background="@drawable/mi_boton"
                 android:text="@string/btnEnviar"
                 android:textAllCaps="false"
@@ -119,7 +122,7 @@
                 android:background="@drawable/mi_boton2"
                 android:text="@string/btnAtras"
                 android:textAllCaps="false"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
 

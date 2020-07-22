@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/f_i1"
     tools:context=".RegistroActivity">
 
     <LinearLayout
@@ -17,6 +18,7 @@
             android:layout_width="195dp"
             android:layout_height="103dp"
             android:layout_gravity="center_horizontal"
+            android:layout_margin="15dp"
             android:src="@drawable/im1_e" />
 
         <TextView
@@ -214,7 +216,7 @@
             <Button
                 android:id="@+id/btnContinuar"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
+                android:layout_width="700px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="50px"
@@ -225,14 +227,14 @@
             <Button
                 android:id="@+id/btnAtras"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
+                android:layout_width="700px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="50px"
                 android:text="@string/btnAtras"
                 android:textAllCaps="false"
                 android:background="@drawable/mi_boton2"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
         </LinearLayout>
 
 
